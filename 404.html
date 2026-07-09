@@ -107,6 +107,9 @@
 </div>
 <script id="os-intro-js">
 (function(){
+  // Preview runs on GitHub Pages: Lovable's OAuth broker rejects this domain,
+  // so disable the remembered auto-Google-sign-in and let users use email.
+  try { localStorage.removeItem("os_preferred_auth_provider"); } catch(e){}
   var seen = false;
   try { seen = localStorage.getItem("os-landing-seen") === "1"; } catch(e){}
   window.osEnter = function(){
