@@ -110,19 +110,22 @@
 </div>
 <script id="os-intro-js">
 (function(){
-  // Preview runs on GitHub Pages: Lovable's OAuth broker rejects this domain,
-  // so disable the remembered auto-Google-sign-in and let users use email.
   try { localStorage.removeItem("os_preferred_auth_provider"); } catch(e){}
-  var seen = false;
-  try { seen = localStorage.getItem("os-landing-seen") === "1"; } catch(e){}
+  // Signed in? (backend session in localStorage) — skip the home screen.
+  var signedIn = false;
+  try {
+    for (var i = 0; i < localStorage.length; i++) {
+      var k = localStorage.key(i);
+      if (k && k.indexOf("sb-") === 0 && k.indexOf("-auth-token") > -1 && localStorage.getItem(k)) { signedIn = true; break; }
+    }
+  } catch(e){}
   window.osEnter = function(){
-    try { localStorage.setItem("os-landing-seen","1"); } catch(e){}
     var l = document.getElementById("os-landing"); if (l) l.remove();
   };
   setTimeout(function(){
     var sp = document.getElementById("os-splash");
     if (sp) sp.classList.add("gone");
-    if (!seen) { var l = document.getElementById("os-landing"); if (l) l.style.display = "flex"; }
+    if (!signedIn) { var l = document.getElementById("os-landing"); if (l) l.style.display = "flex"; }
   }, 2000);
   setTimeout(function(){ var sp = document.getElementById("os-splash"); if (sp) sp.remove(); }, 3600);
 })();
