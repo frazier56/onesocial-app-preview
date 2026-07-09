@@ -63,9 +63,64 @@
   <link rel="preconnect" href="https://dxtsyxwyzhvcvmoghjss.supabase.co" crossorigin />
   <script type="module" crossorigin src="/onesocial-app-preview/index-BFLuB7Dq.js"></script>
   <link rel="stylesheet" crossorigin href="/onesocial-app-preview/index-sHJNh0rc.css">
+<style id="os-intro-css">
+#os-splash{position:fixed;inset:0;z-index:9999;background:#FAFAF8;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 1.5s ease}
+#os-splash.gone{opacity:0;pointer-events:none}
+#os-splash img{height:84px;width:auto;border-radius:20px;animation:oss-heart 3s ease-in-out infinite}
+#os-splash .st{margin-top:14px;font-size:30px;font-weight:800;letter-spacing:-.01em;color:#111827;font-family:Inter,system-ui,sans-serif}
+#os-splash .st b{color:#0d9488;font-weight:600}
+#os-splash .ss{margin-top:4px;font-size:12px;font-weight:600;color:#6b7280;letter-spacing:.14em;text-transform:uppercase;font-family:Inter,system-ui,sans-serif}
+#os-splash .bar{margin-top:26px;width:135px;height:4px;border-radius:999px;background:#e5e7eb;overflow:hidden}
+#os-splash .bar i{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,#14b8a6,#0d9488);animation:oss-load 1.9s ease-out forwards}
+@keyframes oss-heart{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
+@keyframes oss-load{to{width:100%}}
+#os-landing{position:fixed;inset:0;z-index:9998;background:#FAFAF8;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px;text-align:center;font-family:Inter,system-ui,sans-serif}
+#os-landing img{height:64px;border-radius:16px}
+#os-landing h1{margin-top:18px;font-size:26px;line-height:1.2;font-weight:800;color:#111827;max-width:22rem}
+#os-landing h1 b{color:#0d9488}
+#os-landing p{margin-top:10px;font-size:14px;line-height:1.55;color:#6b7280;max-width:21rem}
+#os-landing ul{margin-top:16px;list-style:none;padding:0;font-size:13.5px;color:#374151;display:flex;flex-direction:column;gap:7px}
+#os-landing .cta{margin-top:26px;width:100%;max-width:20rem;padding:15px 0;border:0;border-radius:14px;background:linear-gradient(180deg,#14b8a6,#0d9488);color:#fff;font-size:16px;font-weight:700;cursor:pointer;box-shadow:0 8px 24px rgba(13,148,136,.3)}
+#os-landing .signin{margin-top:14px;background:none;border:0;font-size:14px;color:#6b7280;cursor:pointer}
+#os-landing .signin b{color:#0d9488}
+</style>
 </head>
 
   <body>
+<div id="os-splash">
+  <img src="apple-touch-icon.png" alt="" />
+  <div class="st"><b>One</b>Social</div>
+  <div class="ss">The Credibility-First Marketplace</div>
+  <div class="bar"><i></i></div>
+</div>
+<div id="os-landing" style="display:none">
+  <img src="apple-touch-icon.png" alt="" />
+  <h1>Where proof gets you <b>hired</b>.</h1>
+  <p>OneSocial is the credibility-first professional marketplace — verified reviews, real jobs, and payments in one place.</p>
+  <ul>
+    <li>✓ Book talent Airbnb-style or post a job</li>
+    <li>✓ Verified reviews & your OneScore™</li>
+    <li>✓ Chat, contracts & payments built in</li>
+  </ul>
+  <button class="cta" onclick="osEnter()">Get started →</button>
+  <button class="signin" onclick="osEnter()">Already a member? <b>Sign in</b></button>
+</div>
+<script id="os-intro-js">
+(function(){
+  var seen = false;
+  try { seen = localStorage.getItem("os-landing-seen") === "1"; } catch(e){}
+  window.osEnter = function(){
+    try { localStorage.setItem("os-landing-seen","1"); } catch(e){}
+    var l = document.getElementById("os-landing"); if (l) l.remove();
+  };
+  setTimeout(function(){
+    var sp = document.getElementById("os-splash");
+    if (sp) sp.classList.add("gone");
+    if (!seen) { var l = document.getElementById("os-landing"); if (l) l.style.display = "flex"; }
+  }, 2000);
+  setTimeout(function(){ var sp = document.getElementById("os-splash"); if (sp) sp.remove(); }, 3600);
+})();
+</script>
     <div id="root">
       <!-- Fallback shown while JS loads or if it fails — O-mark only, no text -->
       <div id="app-fallback" style="min-height:100vh;display:flex;align-items:center;justify-content:center;background:#08090b;">
