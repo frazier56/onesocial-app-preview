@@ -74,16 +74,36 @@
 #os-splash .bar i{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,#14b8a6,#0d9488);animation:oss-load 1.9s ease-out forwards}
 @keyframes oss-heart{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
 @keyframes oss-load{to{width:100%}}
-#os-landing{position:fixed;inset:0;z-index:9998;background:#FAFAF8;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px;text-align:center;font-family:Inter,system-ui,sans-serif}
-#os-landing img{height:64px;border-radius:16px}
-#os-landing h1{margin-top:18px;font-size:26px;line-height:1.2;font-weight:800;color:#111827;max-width:22rem}
-#os-landing h1 b{color:#0d9488}
-#os-landing p{margin-top:10px;font-size:14px;line-height:1.55;color:#6b7280;max-width:21rem}
-#os-landing ul{margin-top:18px;list-style:none;padding:0 6px;font-size:13.5px;line-height:1.5;color:#374151;display:flex;flex-direction:column;gap:9px;text-align:left;max-width:22rem}
-#os-landing ul b{color:#111827}
-#os-landing .cta{margin-top:26px;width:100%;max-width:20rem;padding:15px 0;border:0;border-radius:14px;background:linear-gradient(180deg,#14b8a6,#0d9488);color:#fff;font-size:16px;font-weight:700;cursor:pointer;box-shadow:0 8px 24px rgba(13,148,136,.3)}
-#os-landing .signin{margin-top:14px;background:none;border:0;font-size:14px;color:#6b7280;cursor:pointer}
-#os-landing .signin b{color:#0d9488}
+#os-landing{position:fixed;inset:0;z-index:9998;background:#0B0F1A;overflow-y:auto;-webkit-overflow-scrolling:touch;font-family:Inter,system-ui,sans-serif;color:#F9FAFB}
+#os-landing .wrap{max-width:430px;margin:0 auto;padding:28px 22px 60px;text-align:center}
+#os-landing .brand{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:34px}
+#os-landing .brand img{height:34px;border-radius:9px}
+#os-landing .brand span{font-size:19px;font-weight:800}
+#os-landing .brand b{color:#2dd4bf;font-weight:600}
+#os-landing h1{font-size:34px;line-height:1.15;font-weight:800;letter-spacing:-.02em}
+#os-landing h1 b{background:linear-gradient(90deg,#2dd4bf,#14b8a6);-webkit-background-clip:text;background-clip:text;color:transparent}
+#os-landing .sub{margin-top:14px;font-size:15px;line-height:1.6;color:#9CA3AF}
+#os-landing .ctas{margin-top:26px;display:flex;flex-direction:column;gap:10px}
+#os-landing .cta{width:100%;padding:16px 0;border:0;border-radius:14px;background:linear-gradient(180deg,#2dd4bf,#0d9488);color:#04211e;font-size:16px;font-weight:800;cursor:pointer;box-shadow:0 8px 28px rgba(20,184,166,.35);font-family:inherit;position:relative;overflow:hidden}
+#os-landing .cta::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.28) 46%,rgba(255,255,255,.08) 52%,transparent 62%)}
+#os-landing .ghost{width:100%;padding:14px 0;border:1px solid rgba(255,255,255,.16);border-radius:14px;background:rgba(255,255,255,.04);color:#F9FAFB;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit}
+#os-landing .sec{margin-top:44px;text-align:left}
+#os-landing .sec h2{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#2dd4bf;text-align:center}
+#os-landing .grid{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#os-landing .fcard{border:1px solid rgba(255,255,255,.09);border-radius:16px;background:rgba(255,255,255,.035);padding:16px 14px}
+#os-landing .fcard svg{color:#2dd4bf}
+#os-landing .fcard p{margin-top:8px;font-size:13px;font-weight:700;line-height:1.35}
+#os-landing .fcard span{display:block;margin-top:3px;font-size:11.5px;line-height:1.5;color:#9CA3AF;font-weight:400}
+#os-landing .steps{margin-top:16px;display:flex;flex-direction:column;gap:12px}
+#os-landing .step{display:flex;gap:12px;align-items:flex-start;border:1px solid rgba(255,255,255,.09);border-radius:16px;background:rgba(255,255,255,.035);padding:14px}
+#os-landing .stepn{flex-shrink:0;width:26px;height:26px;border-radius:999px;background:rgba(45,212,191,.15);color:#2dd4bf;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center}
+#os-landing .step p{font-size:13px;font-weight:700}
+#os-landing .step span{display:block;margin-top:2px;font-size:12px;line-height:1.5;color:#9CA3AF;font-weight:400}
+#os-landing .scorestrip{margin-top:44px;border-radius:18px;padding:18px 16px;background:linear-gradient(160deg,rgba(35,45,60,.95),rgba(18,24,35,.95));border:1.5px solid rgba(234,179,8,.5);text-align:center}
+#os-landing .scorestrip .ribbon{display:inline-block;padding:5px 16px;border-radius:12px;background:linear-gradient(135deg,#f3c623,#d99a17,#f3c623);color:#2a1f05;font-size:10.5px;font-weight:800;letter-spacing:.08em}
+#os-landing .scorestrip p{margin-top:10px;font-size:12.5px;line-height:1.55;color:#9CA3AF}
+#os-landing .foot{margin-top:46px;font-size:11.5px;color:#6b7280}
+#os-landing .foot a{color:#2dd4bf;text-decoration:none;font-weight:700}
 </style>
 </head>
 
@@ -95,18 +115,46 @@
   <div class="bar"><i></i></div>
 </div>
 <div id="os-landing" style="display:none">
-  <img src="apple-touch-icon.png" alt="" />
+<div class="wrap">
+  <div class="brand"><img src="apple-touch-icon.png" alt=""/><span><b>One</b>Social</span></div>
   <h1>Where proof gets you <b>hired</b>.</h1>
-  <p>OneSocial is the credibility-first professional marketplace. No follower games, no gatekeeping algorithm — your verified track record does the talking.</p>
-  <ul>
-    <li>🛂 <b>Your Reputation Passport</b> — one verified OneScore™ from your reviews, work & presence</li>
-    <li>📅 <b>Get booked</b> — Airbnb-style reservations, job posts, or instant contracts</li>
-    <li>🛡 <b>Verified reviews</b> — real clients, real jobs, no fakes</li>
-    <li>💬 <b>Everything in one place</b> — chat, contracts & payments built in</li>
-    <li>🎟 <b>Events & networking</b> — meet your next client in person</li>
-  </ul>
-  <button class="cta" onclick="osEnter()">Create my account →</button>
-  <button class="signin" onclick="osEnter()">Already a member? <b>Sign in</b></button>
+  <p class="sub">The credibility-first professional marketplace. No follower games, no pay-to-play algorithm — your verified track record does the talking.</p>
+  <div class="ctas">
+    <button class="cta" onclick="osEnter()">Get started — it's free</button>
+    <button class="ghost" onclick="osEnter()">Sign in</button>
+  </div>
+
+  <div class="sec">
+    <h2>What you get</h2>
+    <div class="grid">
+      <div class="fcard"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.4-3 8.4-7 9.5C8 19.4 5 15.4 5 11V6l7-3z"/><path d="M9.5 12l2 2 3.5-3.5"/></svg><p>Reputation Passport</p><span>One verified OneScore™ built from your reviews, work &amp; presence.</span></div>
+      <div class="fcard"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg><p>Get booked</p><span>Airbnb-style reservations, job posts, or instant contracts in chat.</span></div>
+      <div class="fcard"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.3.9-4.5 4.3 1 6.2-5.5-3-5.5 3 1-6.2L3 9.5l6.3-.9L12 3z"/></svg><p>Verified reviews</p><span>Real clients from real jobs — fakes can't follow you here.</span></div>
+      <div class="fcard"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 01-8 8H4l2-3a8 8 0 1115-5z"/><path d="M9 11h6"/></svg><p>All in one place</p><span>Chat, contracts &amp; payments built in — no juggling apps.</span></div>
+      <div class="fcard"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9a2 2 0 012-2h12a2 2 0 012 2v1a2 2 0 000 4v1a2 2 0 01-2 2H6a2 2 0 01-2-2v-1a2 2 0 000-4V9z"/><path d="M13 7v10"/></svg><p>Events &amp; networking</p><span>Host or attend — meet your next client in person.</span></div>
+      <div class="fcard"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8a4 4 0 100 8 4 4 0 000-8z"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg><p>VAIA, your AI</p><span>Your assistant for profiles, gigs and growth — built in.</span></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step"><div class="stepn">1</div><div><p>Create your profile</p><span>Photo, bio, your work — takes minutes.</span></div></div>
+      <div class="step"><div class="stepn">2</div><div><p>Earn your OneScore™</p><span>Connect your world and let verified proof build your number.</span></div></div>
+      <div class="step"><div class="stepn">3</div><div><p>Get hired &amp; paid</p><span>Bookings, contracts and payments — all inside OneSocial.</span></div></div>
+    </div>
+  </div>
+
+  <div class="scorestrip">
+    <span class="ribbon">ONESCORE™ REPUTATION PASSPORT</span>
+    <p>Your whole reputation in one verified number you can post anywhere — free forever, powered by One World Labs.</p>
+  </div>
+
+  <div class="ctas" style="margin-top:34px">
+    <button class="cta" onclick="osEnter()">Create my account →</button>
+  </div>
+  <p class="foot">Already a member? <a href="#" onclick="osEnter();return false">Sign in</a><br/><br/>A <a href="https://frazier56.github.io/onescore-preview/oneworldlabs.html">One World Labs</a> company</p>
+</div>
 </div>
 <script id="os-intro-js">
 (function(){
